@@ -1,0 +1,114 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.primary {
+  background-color: #007bff;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 0.8em 2em;
+  transition: all 300ms;
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+  &:hover {
+    background-color: #0069d9;
+  }
+}
+.ml-5 {
+  margin-left: 5%;
+}
+.ml-10 {
+  margin-left: 10%;
+}
+.mt-5{
+  margin-top: 5%;
+}
+.pd-5 {
+  padding: 5%;
+}
+.pd-10 {
+  padding: 5%;
+}
+.pointer {
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.tl-left {
+  text-align: left;
+}
+.tl-center {
+  text-align: center;
+}
+.tl-right {
+  text-align: right;
+}
+.align-start {
+  display: flex;
+  align-items: flex-start;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.align-end {
+  display: flex;
+  align-items: flex-end;
+}
