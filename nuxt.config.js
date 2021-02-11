@@ -17,32 +17,34 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" },
+      { rel:"stylesheet", href:"https://pro.fontawesome.com/releases/v5.10.0/css/all.css"}
 
-    ]
+    ],
+   
   },
- 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+
+  loading: {
+    color: "#badc58",
+    failedColor: "#e74c3c",
+    height: "3px",
+    continuous: true
+  },
   css: [
     '~/assets/reset.css',
     '~/assets/classes.scss'
   ],
 
-    // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [
-    ],
+  plugins: [
+  ],
 
-      // Auto import components: https://go.nuxtjs.dev/config-components
-      components: true,
+  components: true,
 
-        // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-        buildModules: [
-        ],
+  buildModules: [
+  ],
 
-          // Modules: https://go.nuxtjs.dev/config-modules
-          modules: [
-          ],
+  modules: [
+  ],
 
-            // Build Configuration: https://go.nuxtjs.dev/config-build
-            build: {
-}
+  build: {
+  }
 }

@@ -1,12 +1,12 @@
 <template>
-<div class="container">
+<div class="container" >
     <div class="login">
         <h1>Ra</h1>
         <div class="inputs">
             <input type="text" placeholder="Kullanıcı Adı" v-model="username">
             <input type="password" placeholder="Şifre" v-model="password">
         </div>
-        <center> <button class="primary">Giriş Yap</button></center>
+        <center> <button class="primary" @click="login">Giriş Yap</button></center>
         <center class="mt-5"><small>Giriş yaparak kullanıcı şartlarımızı ve gizlilik politikamızı kabul etmiş olursunuz</small></center>
     </div>
 </div>
@@ -14,12 +14,18 @@
 
 <script>
 export default {
-data() {
-    return {
-        username: "",
-        password:""
-    }
-},
+    data() {
+        return {
+            username: "",
+            password: ""
+        }
+    },
+
+    methods: {
+        login() {
+            this.$router.push('/home')
+        }
+    },
 }
 </script>
 
@@ -85,7 +91,7 @@ data() {
             width: 80%;
             height: 45px;
             margin-top: 20%;
-            font-size: 18px ;
+            font-size: 18px;
         }
 
         small {
