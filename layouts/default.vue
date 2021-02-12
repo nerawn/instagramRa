@@ -1,10 +1,10 @@
 <template>
-<div id="app">
-    <Nuxt />
-</div>
+    <div id="app">
+        <Nuxt />
+    </div>
 </template>
 
-<style>
+<style lang="scss">
 #app {
     max-width: 935px;
     margin: 0 auto;
@@ -14,23 +14,26 @@
     color: #262626;
 }
 
-    .hesaplariGoruntule {
-        background-color: #2980B9;
-    }
+.hesaplariGoruntule {
+    background-color: #2980B9;
+}
 
-    .banaKimBakti {
-        background-color: #16A085;
-    }
+.banaKimBakti {
+    background-color: #16A085;
+}
 
-    .gtBotu {
-        background-color: #8E44AD;
-    }
+.gtBotu {
+    background-color: #8E44AD;
+}
 
-    .magaza {
-        background-color: #E74C3C;
-    }
+.magaza {
+    background-color: #E74C3C;
+}
 
-    .ayarlar {
-        background-color: #FF9F43;
-    }
+.ayarlar {
+    background-color: #FF9F43;
+}
+
+            
+
 </style>

@@ -18,13 +18,13 @@
             </div>
         </div>
     </header>
-    <div class="highlights" style="display:none;">
+    <div class="highlights">
         <div class="bosluk">bosluk</div>
         <ul>
             <li v-for="asd in 7" :key="asd">
                 <div class="image">
                     <img src="https://picsum.photos/80/80">
-                    <div class="imageDescription hiza">
+                    <div class="imageDescription ">
                         uzman klinik deneme
                     </div>
                 </div>
@@ -45,7 +45,7 @@ export default {
     width: 935px;
     padding: 30px 20px 20px 0px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+margin-bottom: 40px;
     .profile {
         display: flex;
         width: 935px;

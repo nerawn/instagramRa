@@ -36,10 +36,7 @@
 *::after {
   box-sizing: border-box;
 }
-
-.primary {
-  background-color: #007bff;
-  color: white;
+.btn{
   outline: none;
   cursor: pointer;
   border: none;
@@ -50,6 +47,10 @@
   -o-border-radius: 5px;
   padding: 0.8em 2em;
   transition: all 300ms;
+}
+.primary {
+  background-color: #007bff;
+  color: white;
   &:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
@@ -58,6 +59,22 @@
     background-color: #0069d9;
   }
 }
+
+.success {
+  background-color: #28a745;
+  
+  color: white;
+  &:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+  }
+  &:hover {
+    background-color: #218838;
+  }
+}
+
+
+
 .ml-5 {
   margin-left: 5%;
 }
@@ -80,15 +97,14 @@
   display: flex;
 }
 .flex-wrap {
-  display: flex;
   flex-wrap: wrap;
 }
-.flex-start {
-  display: flex;
+.jc--start {
+
   align-items: flex-start;
 }
-.flex-center {
-  display: flex;
+.jc-center {
+ 
   justify-content: center;
 }
 .tl-left {
@@ -101,18 +117,36 @@
   text-align: right;
 }
 .align-start {
-  display: flex;
+
   align-items: flex-start;
 }
 .align-center {
-  display: flex;
+
   align-items: center;
 }
 .align-end {
-  display: flex;
+
   align-items: flex-end;
 }
 .hiza{
   border: 1px solid #BCE0FD;
+}
+.fw-300{
+font-weight: 300;
+}
+.fw-400{
+font-weight: 400;
+}
+.fw-500{
+font-weight: 500;
+}
+.fw-600{
+font-weight: 600;
+}
+.fw-700{
+font-weight: 700;
+}
+.cl-7070{
+  color: #707070;
 }
 

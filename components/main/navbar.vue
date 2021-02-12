@@ -1,30 +1,30 @@
 <template>
 <div class="container">
     <div class="cards">
-        <nuxt-link tag="div" to="/hesaplariGoruntule" class="hesaplariGoruntule">
+        <nuxt-link tag="div" to="/search" class="hesaplariGoruntule">
             <div class="icon"><i class="fas fa-search"></i>
               <b>Hesapları Görüntüle</b>
             </div>
         </nuxt-link>
-        <nuxt-link tag="div" to="/hesaplariGoruntule" class="banaKimBakti">
+        <nuxt-link tag="div" to="/stalkers" class="banaKimBakti">
             <div class="icon">
                 <img src="@/assets/navbarSvgFiles/hacker.svg">
                 <b>Bana Kim Baktı?</b>
             </div>
         </nuxt-link>
-        <nuxt-link tag="div" to="/hesaplariGoruntule" class="gtBotu">
+        <nuxt-link tag="div" to="/gtbot" class="gtBotu">
             <div class="icon">
                 <img src="@/assets/navbarSvgFiles/robot.svg">
                 <b>GT Botu</b>
             </div>
         </nuxt-link>
-        <nuxt-link tag="div" to="/hesaplariGoruntule" class="magaza">
+        <nuxt-link tag="div" to="/store" class="magaza">
             <div class="icon">
                 <img src="@/assets/navbarSvgFiles/shop.svg">
                 <b>Mağaza</b>
             </div>
         </nuxt-link>
-       <nuxt-link tag="div" to="/hesaplariGoruntule" class="ayarlar">
+       <nuxt-link tag="div" to="/settings" class="ayarlar">
             <div class="icon"><img src="@/assets/navbarSvgFiles/settings.svg">
                 <b>Ayarlar</b>
             </div>

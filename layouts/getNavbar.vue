@@ -20,4 +20,5 @@ export default {
     margin-top: 20px;
     color: #262626;
 }
+
 </style>

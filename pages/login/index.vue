@@ -6,7 +6,7 @@
             <input type="text" placeholder="Kullanıcı Adı" v-model="username">
             <input type="password" placeholder="Şifre" v-model="password">
         </div>
-        <center> <button class="primary" @click="login">Giriş Yap</button></center>
+        <center> <button class="btn primary" @click="login">Giriş Yap</button></center>
         <center class="mt-5"><small>Giriş yaparak kullanıcı şartlarımızı ve gizlilik politikamızı kabul etmiş olursunuz</small></center>
     </div>
 </div>
