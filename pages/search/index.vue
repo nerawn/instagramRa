@@ -7,7 +7,7 @@
 
     <ul>
         <li class="profiles flex pointer">
-            <div class="left">
+            <nuxt-link class="left" tag="div" to="/profile">
                 <div class="image flex align-center">
                     <img class="flex" src="https://picsum.photos/200/200" alt="profile photos">
                 </div>
@@ -15,7 +15,7 @@
                     <div class="username">userName</div>
                     <div class="name">name</div>
                 </div>
-            </div>
+            </nuxt-link>
             <div class="right pointer ">
 
                 <i class="fas fa-lock" style="font-size:16px"></i>

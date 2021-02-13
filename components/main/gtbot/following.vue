@@ -5,7 +5,7 @@
     </div>
     <transition name="slide-fade">
     <div class="dropdownContent" v-show="showContent">
-        <profiles />
+        <profiles :color="$store.state.white" />
     </div>
     </transition>
 </div>

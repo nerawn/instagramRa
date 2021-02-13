@@ -1,10 +1,10 @@
 <template>
 <ul>
     <li class="accounts">
-        <div class="left ">
+        <div class="left " :style="{color:  color ? null : '#262626 ', color  }">
             <p v-if="!data">***********</p>
             <p v-else>{{data}}</p>
-            <p>22.03.2021</p>
+            <p>{{date}}</p>
         </div>
         <div class="right">
             <button class="btn primary" @click="show++" :class="{success: show==1}">{{changeButton}}</button>
@@ -19,9 +19,17 @@ export default {
         return {
             data: "",
             changeButton: "Göster",
-            show: 0
+            show: 0,
+            date: "22.03.2021",
         }
     },
+
+    props: {
+        color: {
+            type: String, 
+        },
+    },
+
     watch: {
         show(value) {
 
@@ -49,7 +57,7 @@ ul {
         width: 90%;
         margin: 0 auto;
         height: 40px;
-        color: #707070;
+        color: #262626;
         letter-spacing: 1px;
         display: flex;
         justify-content: space-between;

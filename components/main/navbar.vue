@@ -3,7 +3,7 @@
     <div class="cards">
         <nuxt-link tag="div" to="/search" class="hesaplariGoruntule">
             <div class="icon"><i class="fas fa-search"></i>
-              <b>Hesapları Görüntüle</b>
+                <b>Hesapları Görüntüle</b>
             </div>
         </nuxt-link>
         <nuxt-link tag="div" to="/stalkers" class="banaKimBakti">
@@ -24,11 +24,11 @@
                 <b>Mağaza</b>
             </div>
         </nuxt-link>
-       <nuxt-link tag="div" to="/settings" class="ayarlar">
+        <nuxt-link tag="div" to="/settings" class="ayarlar">
             <div class="icon"><img src="@/assets/navbarSvgFiles/settings.svg">
                 <b>Ayarlar</b>
             </div>
-       </nuxt-link>
+        </nuxt-link>
     </div>
 </div>
 </template>
@@ -65,7 +65,8 @@ export default {
             justify-content: center;
             cursor: pointer;
 
-            img ,i{
+            img,
+            i {
                 width: 40px;
                 height: 40px;
                 font-size: 40px;
@@ -81,5 +82,27 @@ export default {
 
     }
 
+    .hesaplariGoruntule {
+        background-color: #2980B9;
+    }
+
+    .banaKimBakti {
+        background-color: #16A085;
+    }
+
+    .gtBotu {
+        background-color: #8E44AD;
+    }
+
+    .magaza {
+        background-color: #E74C3C;
+    }
+
+    .ayarlar {
+        background-color: #FF9F43;
+    }
+img{
+    fill: white;
+}
 }
 </style>

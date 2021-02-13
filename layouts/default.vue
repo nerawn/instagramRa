@@ -1,7 +1,7 @@
 <template>
-    <div id="app">
-        <Nuxt />
-    </div>
+<div id="app">
+    <Nuxt />
+</div>
 </template>
 
 <style lang="scss">
@@ -10,7 +10,6 @@
     margin: 0 auto;
     font-family: roboto;
     min-height: 100vh;
-    margin-top: 20px;
     color: #262626;
 }
 
@@ -34,6 +33,7 @@
     background-color: #FF9F43;
 }
 
-            
-
+.vm--overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
 </style>

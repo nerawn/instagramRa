@@ -36,6 +36,16 @@
 *::after {
   box-sizing: border-box;
 }
+.nbtn{
+  // null button
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  
+
+  
+}
 .btn{
   outline: none;
   cursor: pointer;
@@ -96,17 +106,23 @@
 .flex {
   display: flex;
 }
+.inline{
+  display: inline;
+}
 .flex-wrap {
   flex-wrap: wrap;
 }
 .jc--start {
-
   align-items: flex-start;
 }
 .jc-center {
  
   justify-content: center;
 }
+.jc-end {
+   justify-content: flex-end;
+}
+
 .tl-left {
   text-align: left;
 }
@@ -148,5 +164,20 @@ font-weight: 700;
 }
 .cl-7070{
   color: #707070;
+}
+.hidden{
+  visibility: hidden;
+}
+.fg-1{
+  flex-grow: 1;
+}
+.fg-2{
+  flex-grow: 2;
+}
+.fg-3{
+  flex-grow: 3;
+}
+.fg-4{
+  flex-grow: 4;
 }
 

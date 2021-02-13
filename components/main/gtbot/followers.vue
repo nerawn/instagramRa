@@ -5,16 +5,18 @@
     </div>
     <transition name="slide-fade">
         <div class="dropdownContent" v-if="showContent">
-            <profiles />
+            <profiles :color="$store.state.white" />
         </div>
     </transition>
 </div>
 </template>
+
 <script>
 export default {
     data() {
         return {
-            showContent: false
+            showContent: false,
+
         }
     },
 }

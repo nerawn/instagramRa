@@ -32,11 +32,16 @@
 
 <script>
 export default {
-
+    layout: "default"
 }
 </script>
 
 <style lang="scss" scoped>
+.container {
+    width: 935px;
+    margin: 0 auto;
+}
+
 .router {
     min-width: 80%;
     max-width: 935px;
@@ -73,6 +78,12 @@ export default {
             text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
         }
     }
+
+}
+
+
+.vm--overlay {
+    background: rgba(0, 0, 0, 0.9) !important;
 
 }
 </style>

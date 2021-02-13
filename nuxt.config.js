@@ -18,11 +18,8 @@ export default {
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" },
       { rel:"stylesheet", href:"https://pro.fontawesome.com/releases/v5.10.0/css/all.css"}
-
     ],
-   
   },
-
   loading: {
     color: "#badc58",
     failedColor: "#e74c3c",
@@ -33,18 +30,14 @@ export default {
     '~/assets/reset.css',
     '~/assets/classes.scss'
   ],
-
   plugins: [
+    "~/plugins/modal.js",
   ],
-
   components: true,
-
   buildModules: [
   ],
-
   modules: [
   ],
-
   build: {
   }
 }
