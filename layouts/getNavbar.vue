@@ -20,6 +20,7 @@ export default {
     margin-top: 20px;
     color: #262626;
 }
+
 .hesaplariGoruntule {
     background-color: #2980B9;
 }

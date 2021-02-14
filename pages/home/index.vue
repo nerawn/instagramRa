@@ -32,7 +32,7 @@
 
 <script>
 export default {
-    layout: "default"
+
 }
 </script>
 
@@ -40,6 +40,7 @@ export default {
 .container {
     width: 935px;
     margin: 0 auto;
+     padding: 30px 20px 20px 0px;
 }
 
 .router {

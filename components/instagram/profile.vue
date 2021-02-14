@@ -2,31 +2,33 @@
 <div class="container">
     <header class="profile">
         <div class="image">
-            <img src="https://picsum.photos/200/200">
+            <img src="https://picsum.photos/200/200" @click="getProfilePhoto">
+            <profile-photo />
         </div>
         <div class="main">
-            <h2 class="top">nerawn</h2>
+            <h2 class="top">{{username}}</h2>
             <ul class="center">
-                <li> <span>0</span> gönderi</li>
-                <li> <span>250</span> takipçi</li>
-                <li> <span>0</span> takip</li>
+                <li> <span>{{post}}</span> gönderi</li>
+                <li class="pointer" @click="getFollowers"> <span>{{followers}}</span> takipçi</li>
+                <li class="pointer" @click="getFollowing"> <span>{{follow}}</span> takip</li>
             </ul>
             <div class="bottom">
-                <h1>Name</h1>
+                <h1>{{name}}</h1>
                 <br>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae tempore repudiandae numquam atque consequatur commodi ut, at soluta, amet corporis, vero expedita quaerat fugiat ad aliquid sed architecto fuga esse.</span>
+                <span>{{info}}</span>
             </div>
         </div>
     </header>
     <div class="highlights">
         <div class="bosluk">bosluk</div>
         <ul>
-            <li v-for="asd in 7" :key="asd">
+            <li v-for="asd in 1" :key="asd">
                 <div class="image">
-                    <img src="https://picsum.photos/80/80">
+                    <img src="https://picsum.photos/80/80" @click="openStories">
                     <div class="imageDescription ">
                         uzman klinik deneme
                     </div>
+                    <stories />
                 </div>
             </li>
         </ul>
@@ -36,7 +38,31 @@
 
 <script>
 export default {
+    data() {
+        return {
+            username: "nerawn",
+            name: "Ercüment",
+            post: 0,
+            followers: 390,
+            follow: 250,
+            info: "lorem ipsum"
+        }
+    },
+    methods: {
+        getProfilePhoto() {
+            this.$modal.show("profilePhoto");
+        },
+        openStories() {
+            this.$modal.show("stories")
+        },
+        getFollowers() {
+            this.$modal.show("miniModal");
+        },
 
+        getFollowing() {
+            this.$modal.show("miniModal");
+        }
+    },
 }
 </script>
 
@@ -45,7 +71,9 @@ export default {
     width: 935px;
     padding: 30px 20px 20px 0px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-margin-bottom: 40px;
+    margin-bottom: 40px;
+    color: #262626;
+
     .profile {
         display: flex;
         width: 935px;
@@ -60,6 +88,7 @@ margin-bottom: 40px;
                 width: 150px;
                 height: 150px;
                 border-radius: 100%;
+                cursor: pointer;
             }
         }
 

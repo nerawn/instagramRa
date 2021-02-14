@@ -2,20 +2,32 @@
 <div class="container">
     <profile-navbar />
     <profile />
-    <photos />
+    <div class="photos">
+        <photos v-for="(photo, index) in 5" class="photo" :key="index" />
+    </div>
+    <mini-modal />
 </div>
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
 
 <style lang="scss" scoped>
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
     width: 935px;
     margin: 0 auto;
 
+    .photos{
+        float: left;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    photos{
+        display: none;
+    }
 }
 </style>

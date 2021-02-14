@@ -1,10 +1,10 @@
 <template>
 <div>
-    <img src="https://picsum.photos/id/684/350/350" class="mainPhoto pointer" v-for="asd in 5" :key="asd" @click="showModal">
-    <svg class="_8-yf5 " fill="#ffffff" viewBox="0 0 48 48" width="24" @click="closeModal">
+    <img src="https://picsum.photos/id/684/350/350" class="mainPhoto pointer" @click="showModal">
+    <svg class="_8-yf5" fill="#ffffff" viewBox="0 0 48 48" width="24" @click="closeModal" v-if="exit">
         <path clip-rule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fill-rule="evenodd"></path>
     </svg>
-    <modal name="image" :width="width" :height="height" class="modal" style="z-index:1;">
+    <modal :name="String(this.$vnode.key)" :width="width" :height="height" class="modal" style="z-index:1;" @opened="exit = true" @closed="exit = false">
         <div class="modal-container">
             <div class="left">
                 <img src="https://picsum.photos/480/600">
@@ -51,17 +51,15 @@
                 </div>
             </div>
         </div>
-        <mini-modal />
-
     </modal>
 </div>
 </template>
 
 <script>
-import miniModalVue from './modals/miniModal.vue'
 export default {
     data() {
         return {
+            exit: false,
             photoLikers: 899,
             commentLikers: 30,
             comment: "bu cümle beş kelimeden oluşuyor",
@@ -69,7 +67,6 @@ export default {
             maps: "KADIKÖY İSTANBUL",
             commentsUsername: "asdasdasds",
             date: "67h",
-
             images: [{
                     width: 350,
                     height: 350
@@ -91,13 +88,16 @@ export default {
     },
     methods: {
         showModal() {
-            this.$modal.show("image");
+            this.$modal.show(String(this.$vnode.key));
         },
         likers() {
-            this.$modal.show("imageLikers");
+            this.$modal.show("miniModal", {username: "erdemefe07", "name": "Erdem", title: "Beğeniler"});
         },
         closeModal() {
             this.$modal.hide("image");
+        },
+        asd(event) {
+            this.exit = true
         }
     },
 
@@ -108,9 +108,6 @@ export default {
 .mainPhoto {
     width: 293px;
     height: 293px;
-    display: inline;
-    margin-right: 10px;
-    margin-bottom: 20px;
 }
 
 .modal {

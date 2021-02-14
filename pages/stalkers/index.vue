@@ -1,8 +1,9 @@
 <template>
-<div class="container">
+<div class="containers">
     <profiles />
 </div>
 </template>
+
 <script>
 export default {
     layout: "getNavbar",
@@ -13,13 +14,12 @@ export default {
             show: 0
         }
     },
- 
 
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
+.containers {
     margin-top: 30px;
     box-shadow: 0px 0px 6px #00000029;
     min-height: 200px;

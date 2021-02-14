@@ -7,16 +7,16 @@
     </div>
     <nav class="navbar fg">
         <nuxt-link to="/stalkers" tag="div" class="icon">
-            <img src="@/assets/navbarSvgFiles/hacker.svg">
+            <img src="@/assets/navbarSvgFiles/hacker-black.svg">
         </nuxt-link>
         <nuxt-link to="/gtbot" tag="div" class="icon">
-            <img src="@/assets/navbarSvgFiles/robot.svg">
+            <img src="@/assets/navbarSvgFiles/robot-black.svg">
         </nuxt-link>
-        <nuxt-link to="/shop" tag="div" class="icon">
-            <img src="@/assets/navbarSvgFiles/shop.svg">
+        <nuxt-link to="/store" tag="div" class="icon">
+            <img src="@/assets/navbarSvgFiles/shop-black.svg">
         </nuxt-link>
         <nuxt-link to="/settings" tag="div" class="icon">
-            <img src="@/assets/navbarSvgFiles/settings.svg">
+            <img src="@/assets/navbarSvgFiles/settings-black.svg">
         </nuxt-link>
         <nuxt-link to="/home" tag="div" class="icon">
             <img src="https://picsum.photos/400/400" class="pp" alt="profile-photo">

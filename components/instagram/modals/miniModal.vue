@@ -1,9 +1,9 @@
 <template>
-<modal name="imageLikers" width="400" height="400" class="container" styles="border-radius:10px;">
+<modal name="miniModal" width="400" height="400" class="container" styles="border-radius:10px;" @before-open="beforeOpen">
     <div class="top">
         <div class=" hidden fg-1">null</div>
         <div class="title tl-center fg-2">
-            <h1 class="fw-600">Beğenmeler</h1>
+            <h1 class="fw-600">{{title}}</h1>
         </div>
         <div class="closeModal  flex jc-end fg-1">
             <svg class="pointer" fill="#262626" viewBox="0 0 48 48" width="24" @click="closeModal">
@@ -43,18 +43,29 @@ export default {
         return {
             username: "nerawn",
             name: "emirhan",
-
+            title: "begenenler"
         }
     },
     methods: {
         closeModal() {
-            this.$modal.hide("imageLikers");
+            this.$modal.hide("miniModal");
         },
         show() {
-            this.$modal.show('imageLikers');
+            this.$modal.show('miniModal');
         },
+
+        beforeOpen({params}){
+            if(!params)
+                return
+            this.username = params.username
+            this.name = params.name
+            this.title = params.title
+        }
     },
 
+    created() {
+        this.takipciler = this.title
+    },
     mount() {
         this.show()
     }
