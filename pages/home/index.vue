@@ -1,7 +1,8 @@
 <template>
 <div class="container">
     <profile />
-    <div class="router">
+    <div class="router flex jc-se align-center">
+  
         <nuxt-link tag="div" to="/search" class="hesaplariGoruntule">
             <div class="icon"><i class="fas fa-search"></i>
                 <b>Hesapları Görüntüle</b>
@@ -37,11 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-    width: 935px;
-    margin: 0 auto;
-     padding: 30px 20px 20px 0px;
-}
 
 .router {
     min-width: 80%;
@@ -50,9 +46,7 @@ export default {
     border-radius: 5px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
     height: 260px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+   
 
     div {
         width: 180px;
@@ -71,7 +65,6 @@ export default {
             height: 60px;
             font-size: 60px;
         }
-
         b {
             margin-top: 2em;
             font-size: 15px;
@@ -82,9 +75,4 @@ export default {
 
 }
 
-
-.vm--overlay {
-    background: rgba(0, 0, 0, 0.9) !important;
-
-}
 </style>

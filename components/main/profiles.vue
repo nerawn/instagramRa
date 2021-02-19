@@ -1,7 +1,9 @@
 <template>
 <ul>
-    <li class="accounts">
-        <div class="left " :style="{color:  color ? null : '#262626 ', color  }">
+    <li class="accounts flex jc-sb align-center color-main">
+      
+        <div class="left flex fd-column jc-sb " :style="{color:  color ? null : '#262626 ', color  }">
+               
             <p v-if="!user">***********</p>
             <p v-else>{{user.username}}</p>
             <p v-if="user">{{user.date}}</p>
@@ -65,21 +67,14 @@ export default {
 <style lang="scss" scoped>
 ul {
     .accounts {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         height: 40px;
-        color: #262626;
         letter-spacing: 1px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-bottom: 20px;
 
         .left {
-            display: flex;
             height: 40px;
-            flex-direction: column;
-            justify-content: space-between;
 
             p::selection {
                 display: none;

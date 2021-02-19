@@ -14,7 +14,7 @@
     <div class="center">
         <ul class="userCards">
             <li class="card " v-for="asd in 20" :key="asd">
-                <div class="left">
+                <div class="left">  
                     <div class="image">
                         <img src="https://picsum.photos/400/400">
                     </div>

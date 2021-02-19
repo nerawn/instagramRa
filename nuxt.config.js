@@ -17,7 +17,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" },
-      { rel:"stylesheet", href:"https://pro.fontawesome.com/releases/v5.10.0/css/all.css"}
+      { rel: "stylesheet", href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" }
     ],
   },
   loading: {
@@ -27,11 +27,16 @@ export default {
     continuous: true
   },
   css: [
-    '~/assets/reset.css',
-    '~/assets/classes.scss'
+    '~/assets/style/reset.css',
+    '~/assets/style/baskan.scss',
+    '~/assets/style/groupStyles.scss',
+    
+  
+
   ],
   plugins: [
     "~/plugins/modal.js",
+    "~/plugins/toggleButton.js",
   ],
   components: true,
   buildModules: [

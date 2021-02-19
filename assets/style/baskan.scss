@@ -1,3 +1,7 @@
+/*kullanım öncesi Talimatlar
+1.scss kullanmıyorsanız css dosyasına çeviriniz
+2.Şuanda geliştirme sürecindedir. 
+*/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -36,17 +40,14 @@
 *::after {
   box-sizing: border-box;
 }
-.nbtn{
+.nbtn {
   // null button
   outline: none;
   cursor: pointer;
   border: none;
   background-color: transparent;
-  
-
-  
 }
-.btn{
+.btn {
   outline: none;
   cursor: pointer;
   border: none;
@@ -72,7 +73,7 @@
 
 .success {
   background-color: #28a745;
-  
+
   color: white;
   &:focus {
     border-color: #28a745;
@@ -83,18 +84,57 @@
   }
 }
 
+.m-1em {
+  margin: 1em;
+}
+.ml-1m {
+  margin-left: 1em;
+}
+.mr-1m {
+  margin-right: 1em;
+}
 
+.mt-1m {
+  margin-top: 1em;
+}
 
+.mb-1m {
+  margin-bottom: 1em;
+}
+.ml-1rm {
+  margin-left: 1rem;
+}
+
+.mr-1rm {
+  margin-right: 1rem;
+}
+
+.mt-1rm {
+  margin-top: 1rem;
+}
+
+.mb-1rm {
+  margin-bottom: 1rem;
+}
 .ml-5 {
   margin-left: 5%;
+}
+.mr-5 {
+  margin-right: 5%;
+}
+.mt-5 {
+  margin-top: 5%;
+}
+.mb-5 {
+  margin-bottom: 5%;
 }
 .ml-10 {
   margin-left: 10%;
 }
-.mt-5{
+.pt-5 {
   margin-top: 5%;
 }
-.pd-5 {
+.p-5 {
   padding: 5%;
 }
 .pd-10 {
@@ -106,21 +146,41 @@
 .flex {
   display: flex;
 }
-.inline{
+.fd-column {
+  flex-direction: column;
+}
+.fd-column-r {
+  flex-direction: column-reverse;
+}
+.fd-row {
+  flex-direction: row;
+}
+.fd-row-r {
+  flex-direction: row-reverse;
+}
+.inline {
   display: inline;
 }
 .flex-wrap {
   flex-wrap: wrap;
 }
 .jc--start {
-  align-items: flex-start;
+  justify-content: flex-start;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-se {
+  justify-content: space-evenly;
 }
 .jc-center {
- 
   justify-content: center;
 }
 .jc-end {
-   justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .tl-left {
@@ -133,51 +193,62 @@
   text-align: right;
 }
 .align-start {
-
   align-items: flex-start;
 }
 .align-center {
-
   align-items: center;
 }
 .align-end {
-
   align-items: flex-end;
 }
-.hiza{
-  border: 1px solid #BCE0FD;
+.hiza {
+  border: 1px solid #bce0fd;
 }
-.fw-300{
-font-weight: 300;
+.fw-300 {
+  font-weight: 300;
 }
-.fw-400{
-font-weight: 400;
+.fw-400 {
+  font-weight: 400;
 }
-.fw-500{
-font-weight: 500;
+.fw-500 {
+  font-weight: 500;
 }
-.fw-600{
-font-weight: 600;
+.fw-600 {
+  font-weight: 600;
 }
-.fw-700{
-font-weight: 700;
+.fw-700 {
+  font-weight: 700;
 }
-.cl-7070{
+.cl-7070 {
   color: #707070;
 }
-.hidden{
+.hidden {
   visibility: hidden;
 }
-.fg-1{
+.fg-1 {
   flex-grow: 1;
 }
-.fg-2{
+.fg-2 {
   flex-grow: 2;
 }
-.fg-3{
+.fg-3 {
   flex-grow: 3;
 }
-.fg-4{
+.fg-4 {
   flex-grow: 4;
 }
-
+.noutline {
+  outline: 0px;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.sticky{
+  position:sticky;
+}
+.static{
+  position:static;
+}

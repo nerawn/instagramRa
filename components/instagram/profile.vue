@@ -2,8 +2,11 @@
 <div class="container">
     <header class="profile">
         <div class="image">
-            <img src="https://picsum.photos/200/200" @click="getProfilePhoto">
+            <div class="story" :class="{colorful: getStory }">
+                <img src="https://picsum.photos/200/200" @click="getProfilePhoto">
+            </div>
             <profile-photo />
+            <v-dialog />
         </div>
         <div class="main">
             <h2 class="top">{{username}}</h2>
@@ -28,7 +31,8 @@
                     <div class="imageDescription ">
                         uzman klinik deneme
                     </div>
-                    <stories />
+                    <video-stories />
+                    <!-- <stories/>  abi burda kafa gitti anlamadım o yüzden video storiesi image stories yapmadım  -->
                 </div>
             </li>
         </ul>
@@ -38,19 +42,55 @@
 
 <script>
 export default {
+
     data() {
-        return {
+        
+      return {
             username: "nerawn",
             name: "Ercüment",
             post: 0,
             followers: 390,
             follow: 250,
-            info: "lorem ipsum"
+            info: "lorem ipsum",
+            getStory: false,
+            story: 0
+
         }
     },
     methods: {
         getProfilePhoto() {
-            this.$modal.show("profilePhoto");
+            if (this.story >= 1) {
+                this.getStory = true
+                this.$modal.show('dialog', {
+                    title: 'Bilgi',
+                    text: 'Kullanıcının Hikayesi Bulunmakta',
+                    buttons: [{
+                            title: 'Kapat',
+                            handler: () => {
+                                this.$modal.hide('dialog')
+                            }
+                        },
+                        {
+                            title: 'Hikayeler',
+                            handler: () => {
+                                this.$modal.hide('dialog')
+                                this.$modal.show("stories")
+                            }
+                        },
+                        {
+                            title: 'Profil Fotoğrafı',
+                            color: "white",
+                            handler: () => {
+                                this.$modal.hide('dialog')
+                                this.$modal.show("profilePhoto");
+                            }
+                        }
+                    ]
+                });
+            } else {
+                this.$modal.hide('dialog')
+                this.$modal.show("profilePhoto");
+            }
         },
         openStories() {
             this.$modal.show("stories")
@@ -61,8 +101,10 @@ export default {
 
         getFollowing() {
             this.$modal.show("miniModal");
-        }
+        },
+
     },
+
 }
 </script>
 
@@ -83,12 +125,25 @@ export default {
             width: 31%;
             text-align: center;
             margin-right: 30px;
+            display: flex;
+            justify-content: center;
+
+            .story {
+                width: 168px;
+                height: 168px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                text-align: center;
+            }
 
             img {
-                width: 150px;
-                height: 150px;
-                border-radius: 100%;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
                 cursor: pointer;
+                border: 5px solid #FFFFFF;
             }
         }
 
@@ -184,5 +239,9 @@ export default {
         }
     }
 
+}
+
+.colorful {
+    background: linear-gradient(45deg, #f5eb6d, #ed8554, #e1306c, #fd1d1d);
 }
 </style>
