@@ -35,15 +35,20 @@
         <nuxt-link to="/settings" tag="div" class="icon">
             <img src="@/assets/navbarSvgFiles/settings-black.svg">
         </nuxt-link>
-        <nuxt-link to="/home" tag="div" class="icon">
-            <img src="https://picsum.photos/400/400" class="pp" alt="profile-photo">
-        </nuxt-link>
+       <nuxt-link to="/home" tag="div" class="icon">
+        <img
+          :src="$store.getters.getProfilePhoto"
+          class="pp"
+          alt="profile-photo"
+        />
+      </nuxt-link>
     </nav>
 </div>
 </template>
 
 <script>
 export default {
+    name:'Profile-Navbar',
     data() {
         return {
             username: "username",

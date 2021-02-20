@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'instagram-Ra',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'tr'
     },
     meta: [
       { charset: 'utf-8' },
@@ -30,19 +30,30 @@ export default {
     '~/assets/style/reset.css',
     '~/assets/style/baskan.scss',
     '~/assets/style/groupStyles.scss',
-    
-  
-
   ],
   plugins: [
     "~/plugins/modal.js",
     "~/plugins/toggleButton.js",
+    '~/plugins/axios.js',
+    '~/plugins/timeago.js',
   ],
   components: true,
   buildModules: [
   ],
   modules: [
+    '@nuxtjs/axios'
   ],
   build: {
+  },
+  axios: {
+    baseURL: 'http://localhost:3000',
+    credentials: true
+  },
+  server: {
+    host: "0.0.0.0",
+    port: 8080
+  },
+  router: {
+    // customize the Nuxt.js router
   }
 }

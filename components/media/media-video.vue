@@ -1,145 +1,120 @@
 <template>
-  <modal
-    :name="name"
-    :width="getWidth + 335"
-    :height="getHeight"
-    class="modal"
-    style="z-index: 1"
-    @opened="$parent.exit = true"
-    @closed="$parent.exit = false"
-  >
-    <div class="modal-container" v-if="changed">
-      <div class="left" style="background-color: black">
-        <div class="leftArrow absolute" @click="slide--" v-if="isSlider">
-          <img src="/leftArrow.png" />
+  <div class="media-container">
+    <img
+      :src="media.image_versions2.candidates[0].url"
+      class="mainPhoto pointer"
+      @click="showModal"
+    />
+    <svg
+      class="_8-yf5"
+      fill="#ffffff"
+      viewBox="0 0 48 48"
+      width="24"
+      @click="closeModal"
+      v-if="exit"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z"
+        fill-rule="evenodd"
+      ></path>
+    </svg>
+    <span class="media-icon">
+      <i v-if="media.media_type == 2" class="far fa-video"></i>
+    </span>
+    <modal
+      :name="media.pk.toString()"
+      :width="getWidth + 335"
+      :height="getHeight"
+      class="modal"
+      style="z-index: 1"
+      v-if="exit"
+    >
+      <div class="modal-container">
+        <div class="left" style="background-color: black">
+          <video :width="getWidth" :height="getHeight" controls class="noutline">
+            <source
+              v-for="video in media.video_versions"
+              :key="video.type"
+              :src="video.url"
+            />
+          </video>
         </div>
-        <img
-          v-if="media.carousel_media[slide].media_type == 1"
-          :src="media.carousel_media[slide].image_versions2.candidates[0].url"
-          :style="{ width: getWidth + 'px', height: getHeight + 'px' }"
-          style="object-fit: contain"
-        />
-        <video
-          :width="getWidth"
+        <media-sidebar
+          :id="media.pk"
+          :caption="media.caption"
+          :user="media.user"
+          :location="media.location"
           :height="getHeight"
-          controls
-          class="noutline"
-          v-if="media.carousel_media[slide].media_type == 2"
-          @click.stop="()=>{}"
-        >
-          <source
-            v-for="video in media.carousel_media[slide].video_versions"
-            :key="video.type"
-            :src="video.url"
-          />
-        </video>
-        <div class="rightArrow absolute" v-if="isSlider">
-          <img src="/rightArrow.png" @click="slide++" />
-        </div>
+          :likeCount="media.like_count"
+        />
       </div>
-
-      <media-sidebar
-        :id="name"
-        :caption="media.caption"
-        :user="media.user"
-        :location="media.location"
-        :height="getHeight"
-        :likeCount="media.like_count"
-      />
-    </div>
-  </modal>
+    </modal>
+  </div>
 </template>
 
 <script>
 export default {
+  props: {
+    media: Object,
+  },
   data() {
     return {
-      slide: 0,
-      changed: true,
+      exit: false,
     };
   },
-  props: {
-    name: String,
-    width: Number,
-    height: Number,
-    media: Object,
-    usersData: {},
-  },
-  watch: {
-    slide(value) {
-      this.changed = false;
+  methods: {
+    showModal() {
+      this.exit = true;
       this.$nextTick(() => {
-        this.changed = true;
+        this.$modal.show(this.media.pk.toString());
       });
+    },
 
-      if (value >= this.media.carousel_media_count) {
-        this.slide = 0;
-      }
-
-      if (value < 0) this.slide = 0;
+    closeModal() {
+      this.$modal.hide(this.media.pk.toString());
     },
   },
   computed: {
-    isSlider() {
-      // return this.photos.length > 1 ? false : true      - Aşağıdaki ile aynısı
-      if (this.media.carousel_media_count > 1) return true;
-      return false;
-    },
-
     getWidth() {
-      const width = this.media.carousel_media[this.slide].image_versions2
-        .candidates[0].width;
+      const width = this.media.image_versions2.candidates[0].width;
       if (width < 600) return 600;
       if (width > 1200) return 1200;
       return width;
     },
 
     getHeight() {
-      const height = this.media.carousel_media[this.slide].image_versions2
-        .candidates[0].height;
+      const height = this.media.image_versions2.candidates[0].height;
       if (height < 600) return 600;
       if (height > 800) return 800;
       return height;
     },
   },
-  created() {
-    console.log(this.media);
-  },
 };
 </script>
 
 <style lang="scss" scoped>
+.media-container {
+  position: relative;
+
+  .media-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    color: white;
+  }
+}
+
+.mainPhoto {
+  width: 293px;
+  height: 293px;
+}
+
 .modal {
   color: #707070;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
-  .left {
-    display: flex;
-    position: relative;
-
-    .leftArrow,
-    .rightArrow {
-      position: absolute;
-
-      img {
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 50%;
-        cursor: pointer;
-      }
-    }
-
-    .leftArrow {
-      top: 50%;
-      left: 1em;
-    }
-
-    .rightArrow {
-      top: 50%;
-      right: 1em;
-    }
-  }
 
   .modal-container {
     display: flex;
@@ -236,6 +211,21 @@ export default {
       }
     }
   }
+}
+
+.vm--modal {
+  border-radius: 40px !important;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  color: white;
+  z-index: 99;
+  cursor: pointer;
 }
 
 .pp {

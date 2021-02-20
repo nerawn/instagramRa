@@ -1,8 +1,8 @@
 <template>
 <div class="wrapper">
-    <unfollowing />
-    <following />
-    <followers />
+    <main-gtbot-unfollowing />
+    <main-gtbot-following />
+    <main-gtbot-followers />
 </div>
 </template>
 
