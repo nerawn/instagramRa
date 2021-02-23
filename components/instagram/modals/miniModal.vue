@@ -14,7 +14,7 @@
     <div class="center">
         <ul class="userCards">
             <li class="card " v-for="asd in 20" :key="asd">
-                <div class="left">  
+                <div class="left">
                     <div class="image">
                         <img src="https://picsum.photos/400/400">
                     </div>
@@ -31,6 +31,7 @@
                     <nuxt-link tag="button" to="/home" class="btn primary">Profil</nuxt-link>
                 </div>
             </li>
+            <center><button class="btn success mt-5 mb-5">Daha Fazla Göster</button></center>
         </ul>
     </div>
 </modal>
@@ -54,8 +55,10 @@ export default {
             this.$modal.show('miniModal');
         },
 
-        beforeOpen({params}){
-            if(!params)
+        beforeOpen({
+            params
+        }) {
+            if (!params)
                 return
             this.username = params.username
             this.name = params.name

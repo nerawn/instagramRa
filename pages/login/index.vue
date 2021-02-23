@@ -3,8 +3,8 @@
     <div class="login">
       <h1>Ra</h1>
       <div class="inputs">
-        <input type="text" placeholder="Kullanıcı Adı" v-model="username" />
-        <input type="password" placeholder="Şifre" v-model="password" />
+        <input type="text" placeholder="Kullanıcı Adı" v-model="username" @keyup.enter="login" />
+        <input type="password" placeholder="Şifre" v-model="password" @keyup.enter="login" />
       </div>
       <center>
         <button class="btn primary" @click="login">Giriş Yap</button>

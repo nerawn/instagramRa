@@ -23,7 +23,7 @@ export default {
   loading: {
     color: "#badc58",
     failedColor: "#e74c3c",
-    height: "3px",
+    height: "5px",
     continuous: true
   },
   css: [

@@ -1,16 +1,41 @@
 <template>
-<div class="media-container ">
-    <div class="cover">
-        <i class="fab fa-instagram" style="color:pink; font-size:50px"></i>
-    </div>
-    <img :src="media.image_versions2.candidates[1].url" class="mainPhoto pointer" @click="showModal" />
+<div class="media-container">
+    <!-- <ul class="photos fw-400 pointer" >
+        <li class="media-reels " :style="{ backgroundImage: 'url(' + url + ')' }">
+            <div class="bottom">
+                <div class="left">
+                    <svg aria-label="Oynatma Sayısı Simgesi" class="_8-yf5 " fill="#ffffff" height="16" viewBox="0 0 48 48" width="16">
+                        <path d="M9.6 46.5c-1 0-2-.3-2.9-.8-1.8-1.1-2.9-2.9-2.9-5.1V7.3c0-2.1 1.1-4 2.9-5.1 1.9-1.1 4.1-1.1 5.9 0l30.1 17.6c1.5.9 2.3 2.4 2.3 4.1 0 1.7-.9 3.2-2.3 4.1L12.6 45.7c-.9.5-2 .8-3 .8z"></path>
+                    </svg>
+                </div>
+                <div class="right fw-600">
+                    <span>{{reyting}}</span>
+                </div>
+            </div>
+            <div class="cover">
+                <div class="like">
+                    <img src="/comment.svg">
+                    <span>{{like}}</span>
+                </div>
+                <div class="comment">
+                    <img src="/comment.svg">
+                    <span>{{comment}}</span>
+                </div>
+            </div>
+        </li>
+    </ul> -->
     <svg class="_8-yf5" fill="#ffffff" viewBox="0 0 48 48" width="24" @click="closeModal" v-if="exit">
         <path clip-rule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fill-rule="evenodd"></path>
     </svg>
-    <modal :name="media.pk.toString()" :width="getWidth + 335" :height="getHeight" class="modal" style="z-index: 1">
+    <span class="media-icon" v-if="media.media_type == 2">
+        <span class="background hidden">a</span>
+    </span>
+    <modal :name="media.pk.toString()" :width="getWidth + 335" :height="getHeight" class="modal" style="z-index: 1" v-if="exit">
         <div class="modal-container">
-            <div class="left" style="background-color: black;">
-                <img :src="media.image_versions2.candidates[0].url" :style="{width: getWidth + 'px', height: getHeight + 'px'}" />
+            <div class="left" style="background-color: black">
+                <video :width="getWidth" :height="getHeight" controls class="noutline">
+                    <source v-for="video in media.video_versions" :key="video.type" :src="video.url" />
+                </video>
             </div>
             <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getHeight" :likeCount="media.like_count" />
         </div>
@@ -22,15 +47,22 @@
 export default {
     props: {
         media: Object,
+        url: String,
+        reyting: String,
+        like: String,
+        comment: String
     },
     data() {
         return {
-            exit: true,
+            exit: false,
         };
     },
     methods: {
         showModal() {
-            this.$modal.show(this.media.pk.toString());
+            this.exit = true;
+            this.$nextTick(() => {
+                this.$modal.show(this.media.pk.toString());
+            });
         },
 
         closeModal() {
@@ -40,14 +72,15 @@ export default {
     computed: {
         getWidth() {
             const width = this.media.image_versions2.candidates[0].width;
-            if (width > 600) return 600;
-            
+            if (width < 600) return 600;
+            if (width > 1200) return 1200;
             return width;
         },
 
         getHeight() {
             const height = this.media.image_versions2.candidates[0].height;
-            if (height > 600) return 600;
+            if (height < 600) return 600;
+            if (height > 800) return 800;
             return height;
         },
     },
@@ -60,26 +93,21 @@ export default {
 
     .media-icon {
         position: absolute;
-        right: 0;
+        right: 5px;
         top: 0;
         padding: 5px;
         color: white;
+        width: 32px;
+        height: 32px;
+        background-image: url('/mediaTypes.png');
+        background-repeat: no-repeat;
+        background-position: 0px -34px;
     }
-.cover{
-position: fixed;
-top: 45%;
-left: 100%;
-
-    i {
-        color: black !important;
-    }
-}
 }
 
 .mainPhoto {
     width: 293px;
     height: 293px;
-    z-index: -1;
 }
 
 .modal {
@@ -89,13 +117,6 @@ left: 100%;
 
     .modal-container {
         display: flex;
-
-.left{
-    max-width: 600px;
-    img{
-      max-width: 600px;
-    }
-}
 
         .right {
             width: 335px;

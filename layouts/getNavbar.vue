@@ -11,13 +11,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 #app {
     max-width: 935px;
     margin: 0 auto;
     font-family: roboto;
     min-height: 100vh;
-    margin-top: 20px;
     color: #262626;
 }
 

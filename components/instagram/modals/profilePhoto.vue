@@ -2,7 +2,7 @@
 <div>
 
     <modal name="profilePhoto" width="500" height="500" class="container" styles="border-radius:5px;" @opened="exit = true" @closed="exit = false">
-        <img src="https://picsum.photos/500/500">
+        <img :src="src">
         <svg class="pointer" fill="#ffffff" viewBox="0 0 48 48" width="24" v-if="exit" @click="closeModal">
             <path clip-rule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fill-rule="evenodd"></path>
         </svg>
@@ -17,6 +17,11 @@ export default {
         return {
             exit: false
         }
+    },
+    props: {
+        src: {
+            type: String,
+        },
     },
     methods: {
         closeModal() {
