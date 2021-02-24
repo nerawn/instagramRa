@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@guillaumebriday/vue-scroll-progress-bar": "^1.0.0",
     "@nuxt/types": "^2.15.1",
     "@nuxtjs/axios": "^5.13.1",
     "core-js": "^3.8.3",

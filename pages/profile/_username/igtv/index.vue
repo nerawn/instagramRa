@@ -3,9 +3,10 @@
     <instagram-profile-navbar />
     <instagram-profile :user="getUser" :mainUser="mainUser" />
     <instagram-whirl />
-    <ul class="photos fw-400 pointer" v-if="!mainUser">
-        <li class="media-reels " v-for="media in 5" :key="media" :style="{ backgroundImage: 'url(' + url + ')' }">
+     <ul class="photos fw-400 pointer" v-if="!mainUser">
+        <li class="media-reels " v-for="media in 5" :key="media" :style="{ backgroundImage: 'url(' + url + ')' }" >
             <div class="center">
+
             </div>
             <div class="bottom">
                 <div class="left">
@@ -14,22 +15,25 @@
                     </svg>
                 </div>
                 <div class="right fw-600">
-                    <span>{{reyting}}</span>
+                    <span>{{title}}</span>
                 </div>
+
             </div>
             <div class="cover">
                 <div class="like">
                     <img src="/comment.svg">
-                    <span>{{like}}</span>
+                    <span>3.5k</span>
                 </div>
                 <div class="comment">
                     <img src="/comment.svg">
-                    <span>{{comment}}</span>
+                    <span>3.5k</span>
                 </div>
             </div>
         </li>
+
     </ul>
     <instagram-modals-mini-modal />
+   
 </div>
 </template>
 
@@ -39,9 +43,7 @@ export default {
         return {
             mainUser: false,
             url: "https://instagram.fist6-1.fna.fbcdn.net/v/t51.2885-15/e35/150672144_1216575615426403_7849703949096688684_n.jpg?_nc_ht=instagram.fist6-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=9ErPxfs9xZkAX8jUW7A&tp=1&oh=4066b27d07f55be53ef2d6c4bf0b97a6&oe=605EC307&ig_cache_key=MjUxMzk3MDcxOTA5ODE5NTY2Nw%3D%3D.2",
-            reyting: "73,5bin",
-            like: "3.5k",
-            comment: "3.5k"
+  title: "soru cevat",
         }
     },
     async asyncData({
@@ -79,7 +81,7 @@ export default {
     width: 935px;
     margin: 0 auto;
 
-    .photos {
+     .photos {
         display: grid;
         grid-template-columns: auto auto auto auto;
         grid-gap: 30px 30px;
@@ -88,35 +90,31 @@ export default {
     }
 
     .cover {
-        border-radius: 5px;
         position: absolute;
         height: 330px;
         width: 100%;
         align-items: center;
         justify-content: center;
         display: none;
-
-        div {
+        div{
             display: flex;
             color: white;
             font-weight: 600;
-
-            span {
+            span{
                 display: flex;
                 align-items: center;
-
+                
             }
         }
 
     }
 
-    .media-reels {
+       .media-reels {
         width: 100%;
         height: 330px;
         position: relative;
         background-size: cover;
         background-repeat: no-repeat;
-        border-radius: 5px;
 
         .bottom {
             position: absolute;
@@ -135,13 +133,11 @@ export default {
             .cover {
                 display: flex;
                 background-color: rgba(0, 0, 0, 0.5);
-            }
 
-            .bottom {
-                display: none;
             }
         }
     }
+
 
 }
 

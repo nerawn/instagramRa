@@ -3,10 +3,9 @@
     <instagram-profile-navbar />
     <instagram-profile :user="getUser" :mainUser="mainUser" />
     <instagram-whirl />
-     <ul class="photos fw-400 pointer" v-if="!mainUser">
-        <li class="media-reels " v-for="media in 5" :key="media" :style="{ backgroundImage: 'url(' + url + ')' }" >
+    <ul class="photos fw-400 pointer" v-if="!mainUser">
+        <li class="media-reels " v-for="media in 5" :key="media" :style="{ backgroundImage: 'url(' + url + ')' }">
             <div class="center">
-
             </div>
             <div class="bottom">
                 <div class="left">
@@ -29,11 +28,13 @@
                     <span>3.5k</span>
                 </div>
             </div>
+
+            <media-reels :media="mediam"></media-reels>
         </li>
 
     </ul>
     <instagram-modals-mini-modal />
-   
+
 </div>
 </template>
 
@@ -41,9 +42,24 @@
 export default {
     data() {
         return {
+            mediam: {
+                pk: 123,
+                media_type: 2,
+                video_versions: [{
+                    type: 123,
+                    url: "https://instagram.fist6-1.fna.fbcdn.net/v/t50.2886-16/10000000_249337100017961_8758050951033882884_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5pZ3R2LmRlZmF1bHQiLCJxZV9ncm91cHMiOiJbXCJpZ193ZWJfZGVsaXZlcnlfdnRzX290ZlwiXSJ9&_nc_ht=instagram.fist6-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=d3QKaqTiGXcAX-1KvBz&vs=17885969365986720_822647357&_nc_vs=HBksFQAYJEdJQ1dtQUFwb1VaUnhlSUFBQVNKSlJYdzJJcDVicUNCQUFBRhUAAsgBABUAGCRHSUNXbUFBQzVZMllvWU1OQUswc2wwWHczd2hYYnFDQkFBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMRUAACbAqOGLuMzFPxUCKAJDMywXQKZZ%2FfO2RaIYEmRhc2hfYmFzZWxpbmVfMV92MREAdewHAA%3D%3D&_nc_rid=54221a6afa&oe=6037D6CD&oh=ae8c2b39116431e68b455c8c16ff3756"
+                }],
+                image_versions2: {
+                    candidates: [{
+                        url: "https://instagram.fist6-2.fna.fbcdn.net/v/t51.2885-15/e35/152111447_261946675335876_7976585219088274001_n.jpg?_nc_ht=instagram.fist6-2.fna.fbcdn.net&_nc_cat=100&_nc_ohc=Or0H325pQ5kAX-bf1-S&tp=1&oh=77af9c24ae465f3d535f3eaf66b9bded&oe=6037945E",
+                        width: 720,
+                        height: 480,
+                    }]
+                }
+            },
             mainUser: false,
             url: "https://instagram.fist6-1.fna.fbcdn.net/v/t51.2885-15/e35/150672144_1216575615426403_7849703949096688684_n.jpg?_nc_ht=instagram.fist6-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=9ErPxfs9xZkAX8jUW7A&tp=1&oh=4066b27d07f55be53ef2d6c4bf0b97a6&oe=605EC307&ig_cache_key=MjUxMzk3MDcxOTA5ODE5NTY2Nw%3D%3D.2",
-  reyting: "73,5bin",
+            reyting: "73,5bin",
         }
     },
     async asyncData({
@@ -81,7 +97,7 @@ export default {
     width: 935px;
     margin: 0 auto;
 
-     .photos {
+    .photos {
         display: grid;
         grid-template-columns: auto auto auto auto;
         grid-gap: 30px 30px;
@@ -96,20 +112,22 @@ export default {
         align-items: center;
         justify-content: center;
         display: none;
-        div{
+
+        div {
             display: flex;
             color: white;
             font-weight: 600;
-            span{
+
+            span {
                 display: flex;
                 align-items: center;
-                
+
             }
         }
 
     }
 
-       .media-reels {
+    .media-reels {
         width: 100%;
         height: 330px;
         position: relative;
@@ -137,7 +155,6 @@ export default {
             }
         }
     }
-
 
 }
 

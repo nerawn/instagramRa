@@ -84,4 +84,9 @@
     transform: translateY(10px);
     opacity: 0;
 }
-</style>
+.nuxt-progress{
+   background: linear-gradient(90deg,  #405de6 5%,  #5851db 25%, #833ab4 45%,#c13584, 60%,#e1306c 75% ,#f56040 90% ,#fcaf45 100%  ) ; 
+   border-radius: 10px;
+    
+}
+</style>    

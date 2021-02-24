@@ -1,97 +1,97 @@
 <template>
 <div class="container">
-    <div class="permission_denied">
+    <div class="permission_denied" style="height:80%;">
         <div id="particles-js"></div>
         <div class="denied__wrapper">
             <h1>404</h1>
-            <h3>LOST IN <span>SPACE</span> App-Name? Hmm, looks like that page doesn't exist.</h3>
+            <h3> <p>Hey!</p>Kayıp Mı Oldun? Burada olduguna göre Yanlış bir link girişi yaptın veya console'da bir hata aldın. Seni Ana sayfaya Fırlatıyorum</h3>
             <svg id="astronaut" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                
-<style>
-.st0 {
-    fill: none;
-}
 
-.st1 {
-    fill: #504E55;
-}
+                <style>
+                    .st0 {
+                        fill: none;
+                    }
 
-.st2 {
-    fill: #F39E72;
-}
+                    .st1 {
+                        fill: #504E55;
+                    }
 
-.st3 {
-    fill: #FFFFFF;
-}
+                    .st2 {
+                        fill: #F39E72;
+                    }
 
-.st4 {
-    opacity: 0.24;
-}
+                    .st3 {
+                        fill: #FFFFFF;
+                    }
 
-.st5 {
-    fill: #77574E;
-}
+                    .st4 {
+                        opacity: 0.24;
+                    }
 
-.st6 {
-    fill: #FBD68D;
-}
+                    .st5 {
+                        fill: #77574E;
+                    }
 
-.st7 {
-    fill: #ECECEC;
-}
+                    .st6 {
+                        fill: #FBD68D;
+                    }
 
-.st8 {
-    fill: #F4A89C;
-}
+                    .st7 {
+                        fill: #ECECEC;
+                    }
 
-.st9 {
-    fill: #CFC9E5;
-}
+                    .st8 {
+                        fill: #F4A89C;
+                    }
 
-.st10 {
-    opacity: 0.28;
-}
+                    .st9 {
+                        fill: #CFC9E5;
+                    }
 
-.st11 {
-    opacity: 0.25;
-}
+                    .st10 {
+                        opacity: 0.28;
+                    }
 
-.st12 {
-    fill: #6F635C;
-}
+                    .st11 {
+                        opacity: 0.25;
+                    }
 
-.st13 {
-    fill: #DAE7BE;
-}
+                    .st12 {
+                        fill: #6F635C;
+                    }
 
-.st14 {
-    fill: #FFE0A6;
-}
+                    .st13 {
+                        fill: #DAE7BE;
+                    }
 
-.st15 {
-    fill: #5F5E60;
-}
+                    .st14 {
+                        fill: #FFE0A6;
+                    }
 
-.st16 {
-    fill: #CFE1AF;
-}
+                    .st15 {
+                        fill: #5F5E60;
+                    }
 
-.st17 {
-    fill: #EBE9F5;
-}
+                    .st16 {
+                        fill: #CFE1AF;
+                    }
 
-.st18 {
-    fill: #53515A;
-}
+                    .st17 {
+                        fill: #EBE9F5;
+                    }
 
-.st19 {
-    opacity: 0.42;
-}
+                    .st18 {
+                        fill: #53515A;
+                    }
 
-.st20 {
-    fill: #53515B;
-}
-</style>
+                    .st19 {
+                        opacity: 0.42;
+                    }
+
+                    .st20 {
+                        fill: #53515B;
+                    }
+                </style>
                 <circle cx="256.8" cy="255.3" r="247.9" class="st0" />
                 <path d="M346.4 475H164.9V244.8c0-14 11.4-25.4 25.4-25.4H321c14 0 25.4 11.4 25.4 25.4V475z" class="st2" />
                 <path d="M346.4 470H165l5 5V349.9v-80-21.4c0-10.3 3.9-20.3 15-23.3 6.4-1.8 14.2-.7 20.7-.7h112.4c3.3 0 6.5 0 9.7 1.1 8.3 2.9 13.5 10.7 13.7 19.3.1 4.1 0 8.3 0 12.5v217.7c0 6.4 10 6.4 10 0v-130-79.5-19.1c-.1-13.8-7.6-26-21-30.5-7.2-2.4-15.8-1.5-23.3-1.5H192.9c-14.8 0-28.7 8.4-32 23.6-1.1 5.2-.8 10.8-.8 16.1V475c0 2.7 2.3 5 5 5h181.4c6.3 0 6.3-10-.1-10z" class="st1" />
@@ -178,7 +178,7 @@
                     <path class="stars" fill="#FFF" d="M112.456 363.093c-.056 7.866-6.478 14.197-14.344 14.142 7.866.056 14.198 6.48 14.142 14.345.056-7.866 6.48-14.198 14.345-14.142-7.868-.057-14.2-6.48-14.144-14.345zM432.436 274.908c-.056 7.866-6.478 14.198-14.344 14.142 7.866.057 14.197 6.48 14.142 14.345.056-7.866 6.48-14.197 14.345-14.142-7.868-.056-14.2-6.48-14.144-14.345zM159.75 58.352c-.12 16.537-13.62 29.848-30.157 29.73 16.537.118 29.848 13.62 29.73 30.156.118-16.537 13.62-29.848 30.156-29.73-16.54-.117-29.85-13.62-29.73-30.156z" />
                 </g>
             </svg>
-            <nuxt-link class="denied__link" to="/" tag="button"> Go Home</nuxt-link>
+            <nuxt-link class="denied__link" to="/" tag="button">Hazırım</nuxt-link>
         </div>
     </div>
 </div>
@@ -186,9 +186,9 @@
 
 <script>
 export default {
-  layout:"asd"
-  
-  }
+    layout: "asd"
+
+}
 </script>
 
 <style lang="scss" scoped>
@@ -200,6 +200,8 @@ export default {
 .container{
         width: 100%;
         height: 100vh;
+        display: flex;
+        align-items: center;
   background: #24344c !important; 
 }
 .particle-error,

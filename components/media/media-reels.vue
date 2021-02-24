@@ -37,7 +37,7 @@
                     <source v-for="video in media.video_versions" :key="video.type" :src="video.url" />
                 </video>
             </div>
-            <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getHeight" :likeCount="media.like_count" />
+            <!-- <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getHeight" :likeCount="media.like_count" /> -->
         </div>
     </modal>
 </div>
@@ -68,6 +68,9 @@ export default {
         closeModal() {
             this.$modal.hide(this.media.pk.toString());
         },
+    },
+    mounted(){
+        this.showModal()
     },
     computed: {
         getWidth() {

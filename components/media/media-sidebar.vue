@@ -76,12 +76,18 @@
 
                                 </div>
                             </div>
-                            
+
                         </div>
+
                     </div>
                 </div>
+            </li>
+            <li>
 
             </li>
+<div class="getmore">
+           <center> <button class="fas fa-plus radius mb-5 pointer noutline" @click="getCommentsMore"></button></center>
+           </div>
         </ul>
 
         <div class="likes fw-500 pointer">{{ likeCount }} beğenme</div>
@@ -95,7 +101,7 @@ export default {
         return {
             comments: [],
             getReply: false,
-            reply:"Yanıtları Gör"
+            reply: "Yanıtları Gör"
         }
     },
     props: {
@@ -107,14 +113,14 @@ export default {
         likeCount: Number,
     },
     watch: {
-      getReply(val) {
-        if(val)
-        this.reply = "Yanıtları Gizle"
-      
-      else
-        this.reply = "Yanıtları Gör"
+        getReply(val) {
+            if (val)
+                this.reply = "Yanıtları Gizle"
 
-      }
+            else
+                this.reply = "Yanıtları Gör"
+
+        }
     },
     computed: {
         getHeight() {
@@ -131,6 +137,9 @@ export default {
         this.comments = comments;
     },
     methods: {
+        getCommentsMore(){
+            alert("fetch")
+        },
         likers() {
             this.$modal.show("miniModal", {
                 username: "erdemefe07",
@@ -184,7 +193,8 @@ export default {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
                 Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
             overflow-y: auto;
-
+            max-height: 500px;
+            position: relative;
             // &::-webkit-scrollbar {
             //   width: 0px;
             // }
@@ -247,7 +257,8 @@ export default {
 
 .reply {
     color: #262626;
-  padding-bottom: 1em;
+    padding-bottom: 1em;
+
     .replyTop {
         display: flex;
         align-items: center;
@@ -279,5 +290,17 @@ export default {
     width: 32px;
     height: 32px;
     border-radius: 60px;
+}
+
+.radius {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #292929;
 }
 </style>

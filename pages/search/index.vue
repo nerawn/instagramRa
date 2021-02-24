@@ -8,7 +8,7 @@
 
         <ul>
             <li class="profiles flex jc-sb align-center pointer ">
-                <nuxt-link class="left flex" tag="div" to="/profile">
+                <nuxt-link class="left flex" tag="div" to="/profile/rws10fbot">
                     <div class="image flex align-center">
                         <img class="flex" src="https://picsum.photos/200/200" alt="profile photos">
                     </div>
