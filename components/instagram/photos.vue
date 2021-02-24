@@ -1,5 +1,5 @@
 <template>
-<div class="media-container">
+<div class="media-container"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <img :src="media.carousel_media[0].image_versions2.candidates[1].url" class="mainPhoto pointer" @click="showModal" />
     <svg class="_8-yf5" fill="#ffffff" viewBox="0 0 48 48" width="24" @click="closeModal" v-if="exit">
         <path clip-rule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fill-rule="evenodd"></path>

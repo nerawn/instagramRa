@@ -1,7 +1,7 @@
 <template>
-<div class="panelContainer">
+<div class="panelContainer"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <div class="panelContainer-bottom">
-        <div class="language mb-1m">
+        <div class="language mb-1m" :style="{ color:$store.state.colorMode.color}">
             <h5>Dil</h5>
             <select>
                 <option selected>Türkçe</option>
@@ -55,7 +55,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .language {
     select {
         width: 100%;

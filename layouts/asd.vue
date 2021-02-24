@@ -1,5 +1,5 @@
 <template>
-    <div id="asd">
+    <div id="asd" :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
 <Nuxt/>
     </div>
 </template>

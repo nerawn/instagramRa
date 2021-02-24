@@ -1,7 +1,7 @@
 <template>
 <div class="panelContainer">
-    <div class="panelContainer-bottom">
-        <profiles />
+    <div class="panelContainer-bottom" >
+        <main-profiles />
     </div>
 </div>
 </template>

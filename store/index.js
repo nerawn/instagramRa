@@ -41,7 +41,7 @@ export const mutations = {
 
   setDarkMode(state) {
     state.colorMode = {
-      background: "#292929",
+      background: "#0D1117",
       color: "white",
     };
 

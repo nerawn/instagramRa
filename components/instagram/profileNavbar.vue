@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <div class="null hidden fg-1">logo</div>
     <div class="searchbarContainer ">
         <div class="searchbar">
@@ -22,8 +22,8 @@
         </div>
     </div>
 
-    <nav class="navbar fg">
-        <nuxt-link to="/stalkers" tag="div" class="icon">
+    <nav class="navbar fg"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
+        <nuxt-link to="/stalkers" tag="div" class="icon"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
             <img src="@/assets/navbarSvgFiles/hacker-black.svg">
         </nuxt-link>
         <nuxt-link to="/gtbot" tag="div" class="icon">

@@ -1,13 +1,13 @@
 <template>
-<div class="container">
+<div class="container"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <instagram-profile-navbar />
     <instagram-profile :user="getUser" :mainUser="mainUser" />
     <instagram-whirl />
     <div class="photos fw-400" v-if="!mainUser">
         <div v-for="media in user.media" class="photo" :key="media.id">
-            <media-photo v-if="media.media_type == 1" :media="media" />
-            <media-video v-if="media.media_type == 2" :media="media" />
-            <instagram-photos photo v-if="media.media_type == 8" :media="media" />
+            <media-photo v-if="media.media_type == 1" :media="media" class="even" />
+            <media-video v-if="media.media_type == 2" :media="media" class="even" />
+            <instagram-photos photo v-if="media.media_type == 8" :media="media" class="even" />
             <!-- <slider v-if="photo.media_type == 8" :photo="photo" /> -->
         </div>
     </div>
@@ -130,5 +130,8 @@ export default {
         }
     }
 
+}
+.even{
+    max-width: 293px;
 }
 </style>

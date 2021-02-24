@@ -1,7 +1,9 @@
 <template>
+<div :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
 <div id="app">
     <main-navbar />
     <Nuxt />
+</div>
 </div>
 </template>
 

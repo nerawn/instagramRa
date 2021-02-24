@@ -1,18 +1,18 @@
 <template>
-<div class="panelContainer">
+<div class="panelContainer"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <div class="panelContainer-bottom">
-        <div class="search flex align-center color-main">
+        <div class="search flex align-center color-main" :style="{  color:$store.state.colorMode.color}">
             <label for=""><i class="fas fa-search"></i></label>
-            <input type="text" placeholder="Hesap Ara">
+            <input type="text" placeholder="Hesap Ara" :style="{  color:$store.state.colorMode.color}">
         </div>
 
         <ul>
-            <li class="profiles flex jc-sb align-center pointer ">
+            <li class="profiles flex jc-sb align-center pointer " :style="{  color:$store.state.colorMode.color}">
                 <nuxt-link class="left flex" tag="div" to="/profile/rws10fbot">
                     <div class="image flex align-center">
                         <img class="flex" src="https://picsum.photos/200/200" alt="profile photos">
                     </div>
-                    <div class="center flex jc-sa  fd-column fw-400">
+                    <div class="center flex jc-sa  fd-column fw-400" >
                         <div class="username">userName</div>
                         <div class="name">name</div>
                     </div>

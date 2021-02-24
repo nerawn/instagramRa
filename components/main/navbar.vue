@@ -1,6 +1,6 @@
 <template>
-<div class="container">
-    <div class="cards">
+<div class="container" :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
+    <div class="cards" >
         <nuxt-link tag="div" to="/search" class="hesaplariGoruntule">
             <div class="icon"><i class="fas fa-search"></i>
                 <b>Hesapları Görüntüle</b>

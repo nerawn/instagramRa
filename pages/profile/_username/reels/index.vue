@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <instagram-profile-navbar />
     <instagram-profile :user="getUser" :mainUser="mainUser" />
     <instagram-whirl />

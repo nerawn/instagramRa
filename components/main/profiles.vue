@@ -1,11 +1,10 @@
 <template>
-<ul>
+<ul :style="{color:$store.state.colorMode.color}">
     <li class="accounts flex jc-sb align-center color-main">
-      
-        <div class="left flex fd-column jc-sb " :style="{color:  color ? null : '#262626 ', color  }">
-               
+        <div class="left flex fd-column jc-sb " :style="{Color:$store.state.colorMode.color   }">
+
             <p v-if="!user">***********</p>
-            <p v-else>{{user.username}}</p>
+            <p v-else >{{user.username}}</p>
             <p v-if="user">{{user.date}}</p>
         </div>
         <div class="right">

@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container"  :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <header class="profile">
         <div class="image">
             <div class="story" :class="{ colorful: getStory }">

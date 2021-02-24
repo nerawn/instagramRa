@@ -1,5 +1,5 @@
 <template>
-<div class="panelContainer">
+<div class="panelContainer" :style="{backgroundColor:$store.state.colorMode.background , color:$store.state.colorMode.color}">
     <ul class="panelContainer-bottom ">
         <li class="cards " v-for="(card , index) in 5" :key="index">
             <h3 class="tl-center fw-600 ">Title</h3>
