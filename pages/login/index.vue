@@ -27,7 +27,7 @@ export default {
             username: "",
             password: "",
             isActive: false,
-            visible: true,
+            visible: false,
             type: "password"
 
         };
