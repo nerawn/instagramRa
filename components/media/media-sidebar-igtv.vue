@@ -2,7 +2,7 @@
   <div class="right">
     <div class="top">
       <div class="row">
-        <img class="pp pointer" :src="user.profile_pic_url" />
+        <!-- <img class="pp pointer" :src="user.profile_pic_url" /> -->
         <div class="texts">
           <div class="username fw-500 pointer">
             {{ user.username }}
@@ -20,7 +20,7 @@
         <media-comments-comment
           v-for="comment in comments"
           :key="comment.pk"
-          :comment="comment"
+          :comment="comment.node"
           :mediaId="id"
         />
 
@@ -64,7 +64,7 @@ export default {
   },
   computed: {
     getHeight() {
-      return this.height - 65 - 47 + "px";
+      return this.height - 65 + "px";
     },
     hasMore() {
       if (!this.state) return false;
@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     showDynoModal() {
-      this.$modal.show(
+      this.$modal.show( // TODO burayı yapaq
         ListModal,
         {
           title: "Beğenmeler",
@@ -90,10 +90,10 @@ export default {
     },
 
     async fetchComments() {
-      const { comments } = await this.$axios.$get(`/${this.id}/comments`, {
+      const { comments } = await this.$axios.$get(`/${this.id}/igtvVideo/comments`, {
         headers: { state: this.state },
       });
-      this.comments.push(...comments.items);
+      this.comments.push(...comments.edges);
       this.state = comments.state;
     },
   },

@@ -69,9 +69,6 @@ export default {
             return height;
         },
     },
-    created() {
-        console.log(this.media);
-    },
 };
 </script>
 

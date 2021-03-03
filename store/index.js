@@ -1,5 +1,7 @@
 export const state = () => ({
   user: {},
+  selfSession: null,
+  session: null,
   white: "#ffffff",
   helpers: {
     isEmptyObject(obj) {
@@ -14,6 +16,12 @@ export const state = () => ({
 });
 
 export const getters = {
+  authenticated(state){
+    const length = Object.keys(state.user).length;
+    if (length > 0) return true;
+    return false;
+  },
+
   getProfilePhoto: (state) => {
     return state.helpers.isEmptyObject(state.user) ? 'https://www.rolibo.com/assets/rolibo/upload/images/o/404-not-found-135.png' : state.user.info.profile_pic_url
   },
@@ -35,6 +43,14 @@ export const getters = {
 };
 
 export const mutations = {
+  setSelfSession(state, session){
+    state.selfSession = session
+  },
+
+  setSession(state, session){
+    state.session = session
+  },
+
   login(state, user) {
     state.user = user
   },
@@ -51,6 +67,5 @@ export const mutations = {
       background: "#ffffff",
       color: "#262626",
     };
-  }
-
+  },
 }

@@ -54,6 +54,6 @@ export default {
     port: 8080
   },
   router: {
-    // customize the Nuxt.js router
+    middleware: ['auth']
   }
 }

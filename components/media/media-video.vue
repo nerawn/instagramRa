@@ -7,14 +7,14 @@
     <span class="media-icon" v-if="media.media_type == 2">
         <span class="background hidden">a</span>
     </span>
-    <modal :name="media.pk.toString()" :width="getWidth + 335" :height="getHeight" class="modal" style="z-index: 1" v-if="exit">
+    <modal :name="media.pk.toString()" :width="getVideoWidth + 335" :height="getVideoHeight" class="modal" style="z-index: 1" v-if="exit">
         <div class="modal-container">
             <div class="left" style="background-color: black">
-                <video :width="getWidth" :height="getHeight" controls class="noutline">
+                <video :width="getVideoWidth" :height="getVideoHeight" controls class="noutline">
                     <source v-for="video in media.video_versions" :key="video.type" :src="video.url" />
                 </video>
             </div>
-            <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getHeight" :likeCount="media.like_count" />
+            <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getVideoHeight" :likeCount="media.like_count" :commentCount="media.comment_count" />
         </div>
     </modal>
 </div>
@@ -43,14 +43,14 @@ export default {
         },
     },
     computed: {
-        getWidth() {
-            const width = this.media.image_versions2.candidates[0].width;
+        getVideoWidth() {
+            const width = this.media.video_versions[0].width;
            if (width > 600) return 600;
             return width;
         },
 
-        getHeight() {
-            const height = this.media.image_versions2.candidates[0].height;
+        getVideoHeight() {
+            const height = this.media.video_versions[0].height;
             if (height > 600) return 600;
             return height;
         },

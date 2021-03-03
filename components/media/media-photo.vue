@@ -12,7 +12,7 @@
             <div class="left" style="background-color: black;">
                 <img :src="media.image_versions2.candidates[0].url" :style="{width: getWidth + 'px', height: getHeight + 'px'}" />
             </div>
-            <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getHeight" :likeCount="media.like_count" />
+            <media-sidebar :id="media.pk" :caption="media.caption" :user="media.user" :location="media.location" :height="getHeight" :likeCount="media.like_count" :commentCount="media.comment_count"/>
         </div>
     </modal>
 </div>
